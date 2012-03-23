@@ -1,0 +1,5 @@
+This is a work in progress.
+
+The eventual goal is a genetic algorithm that can crunch many games of the collectible card game Magic the Gathering, and determine optimal decks.
+
+Ideally, it will find novel interpretations and deck ideas that the public isn't working on.  For now, the evaluation algorithm is so simple that this is very unlikely.
