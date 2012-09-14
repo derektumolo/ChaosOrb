@@ -45,7 +45,8 @@ class Card:
     # this should probably happen when we init
     
     def init(carddata):
-        # this function will take in the xml element for a card, and parse it into the various attributes of a card data structure.
+        # this function will take in the xml element for a card, 
+        # and parse it into the various attributes of a card data structure.
         """
     	- mana cost
     	- p/t\
@@ -94,6 +95,10 @@ class Deck:
         score = totalScore/runs  # low scores are better.  
 
 def main():
+    
+    cardpool = Cardpool.init()
+    
+    population = Population.init(10)
     
     
     pass
