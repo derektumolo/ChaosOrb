@@ -1,6 +1,8 @@
 class Game:
     # a simulated game of mtg.  for now, goldfish only
     
+    # TODO - refactor so its a state machine, not individual functions.
+    
     def init(scoredDeck):   # later, we will also have a challenger deck
         self.scoredDeck = scoredDeck
         pass
@@ -28,11 +30,7 @@ class Game:
         for i in range(7):
             self.Draw() # more clear, less redundant to call off for this
             
-    def draw():
-        self.hand.append(scoredDeck.pop())
-        # note that we are sort of drawing from the bottom of the deck.
-        # so anything that interacts with top of deck will need to use last
-        # not 0
+
     
     def turn():
         self.untap()
@@ -54,10 +52,23 @@ class Game:
     def upkeep():
         runTriggers("upkeep", self.inPlay)
         
-        self.priority(False)
+        self.priority(False)    # why is this false?  shortcut for now?
+
+    def draw():
+        self.hand.append(scoredDeck.pop())
+        # note that we are sort of drawing from the bottom of the deck.
+        # so anything that interacts with top of deck will need to use last
+        # not 0
     
     def main1():
         self.priority(True)
+        self.act()
+        
+    def act():
+        # loop through the activated abilities of perms, determine if now is a good time to use them
+        # loop through the cards in hand, determine if now is a good time to use them
+        
+        
     
     def combat():
         for each creature in self.creatures:
